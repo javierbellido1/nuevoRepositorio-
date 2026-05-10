@@ -35,6 +35,20 @@ namespace TaskFlow
                 else if (opcion == "6") {
                     salir = true;
                 }
+                else if (opcion == "3")
+                {
+                    Console.Write("Ingrese el ID de la tarea a actualizar: ");
+                    int id = int.Parse(Console.ReadLine()); // Convertimos el texto en número
+
+                    Console.WriteLine("Elija el nuevo estado: (0: Pendiente, 1: En Progreso, 2: Completada)");
+                    int nuevoEstadoNum = int.Parse(Console.ReadLine());
+
+                    // Convertimos el número al Enum de TaskStatus
+                    TaskStatus nuevoEstado = (TaskStatus)nuevoEstadoNum;
+
+                    // --- LLAMÁ AL MÉTODO DEL SERVICE ACÁ ---
+                    // pista: service.UpdateTaskStatus(id, nuevoEstado);
+                }
             }
         }
     }
